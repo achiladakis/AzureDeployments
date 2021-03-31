@@ -1,6 +1,6 @@
 #General: Credentials in Powershell
 
-###VM credentials in Powershell
+#VM credentials in Powershell
 $vmAdminUsername = 'achiladakis'
 #Create a secure string from an encrypted string in a file -> See StoringCredentials.ps1
 $secureStringFile = Get-Content '.\encrypted.txt'
@@ -8,10 +8,8 @@ $vmAdminPassword = $secureStringFile | ConvertTo-SecureString
 $vmCredential = New-Object System.Management.Automation.PSCredential ($vmAdminUsername, $vmAdminPassword)
 
 #General: Retrieve VNET
-#Retrieve Virtual Network
 $retrieveVnet = Get-AzVirtualNetwork -Name $vnetName `
   -ResourceGroupName $ResourceGroupName `
-
 
 #General: Loops in Powershell
 $names = @("Max","Simon","Luke")
